@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>WindChill</title>
+<script>
+    /*Defining the 1º function(doInputOutput) to input temperature and windspeed from the user.
+    Call de 2º function (windChill) and create the formula of windchill.
+    Display the result from the 2º function.
+    */ 
+function doInputOutput(){ 
+    var Temperature = parseFloat(document.getElementById("Temperature").value);
+    var WindSpeed = parseFloat(document.getElementById("WindSpeed").value);
+    var result = windChill(Temperature, WindSpeed);
+    document.getElementById("display").innerHTML = result;
+}   
+    /* Use the input infomration from the 1º function and retunro the windchill temperature.
+    */
+function windChill(Temperature, WindSpeed){
+    var t = Temperature;
+    var s = WindSpeed;
+    var f = 35.74 + 0.6215 * t - 35.75 * Math.pow(s,0.16) + 0.4275 * t * Math.pow(s,0.16);
+    return "The temperature you feels on your body is: " + f.toFixed(2) + " °F";
+}
+</script>
+</head>
+<body>
+    <h2>Wind Chill Calculator</h2>
+    <br>
+     Real Temperature (°F): <input type="text" id="Temperature" size="6">
+     Wind Speed (mi/h)<input type="text" id="WindSpeed" size="6">
+    <button type="button" onclick="doInputOutput()">Wind Chill</button>
+    <div id="display"></div>
+    <br>
+    </body>
+</html>

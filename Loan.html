@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Loan Calculator</title>
+<script>
+    /* Defining the 1ºfunction(doPayment) asking the user to input AmountBorrowed, AnnualRate, NumberOfYears and 
+    PaymentsPerYear.
+    Call the 3º function (computePayment) and calculate with the formula the total.
+    Display the result from the function (computePayment).
+    */ 
+    
+function doPayment(){ 
+    var AmountBorrowed = parseFloat(document.getElementById("Amount").value);
+    var AnnualRate = parseFloat(document.getElementById("Rate").value);
+    var NumberOfYears = parseFloat(document.getElementById("Years").value);
+    var PaymentsPerYear = parseFloat(document.getElementById("Payments").value);
+
+    var result1 = computePayment(AmountBorrowed, AnnualRate, NumberOfYears, PaymentsPerYear);
+    document.getElementById("display").innerHTML = result1;
+}   
+    /* Defining the 2º function(doBalance) asking the user to input AmountBorrowed, AnnualRate, NumberOfYears
+    PaymentsPerYear and DonePayments.
+    Call the 4º function (computeBalance) and calculate with the formula the total.
+    Display the result from the function (computeBalance).
+    */ 
+function doBalance(){
+    var AmountBorrowed = parseFloat(document.getElementById("Amount").value);
+    var AnnualRate = parseFloat(document.getElementById("Rate").value);
+    var NumberOfYears = parseFloat(document.getElementById("Years").value);
+    var PaymentsPerYear = parseFloat(document.getElementById("Payments").value);
+    var DonePayments = parseFloat(document.getElementById("DonePayments").value);
+
+    var result2 = computeBalance(AmountBorrowed, AnnualRate, NumberOfYears, PaymentsPerYear, DonePayments);
+    document.getElementById("display2").innerHTML = result2;
+
+}
+function computePayment(AmountBorrowed, AnnualRate, NumberOfYears, PaymentsPerYear){
+    var a = AmountBorrowed;
+    var r = AnnualRate / PaymentsPerYear;
+    var n = PaymentsPerYear * NumberOfYears;
+    var p = (a * r ) / (1 - Math.pow((1+ r),-n));
+    return "$" + p.toFixed(2);
+}
+function computeBalance(AmountBorrowed, AnnualRate, NumberOfYears, PaymentsPerYear, DonePayments){
+    var a = AmountBorrowed;
+    var n = PaymentsPerYear * NumberOfYears;
+    var r = AnnualRate / PaymentsPerYear;
+    var p = (a * r) / (1 - Math.pow((1 + r),-n));
+    var d = DonePayments;
+    var b = a * Math.pow((1 + r), d) - (p * (Math.pow((1 + r), d) - 1)) / r;
+    return "$" + b.toFixed(2);
+}
+</script>
+</head>
+<body>
+    <h2>Loan Calculator</h2>
+    <br>
+     Amount Borrowed (Principal): <input type="text" id="Amount" size="6"><br>
+     Annual Rate: <input type="text" id="Rate" size="6"><br>
+     Number of years: <input type="text" id="Years" size="6"><br>
+     Payments per year:<input type="text" id="Payments" size="6"><br>
+    <button type="button" onclick="doPayment()">Compute Payment</button><br>
+    <div id="display"></div><br>
+    Number of payments paid to date:<input type="text" id="DonePayments" size="6"><br>
+    <button type="button" onclick="doBalance()">Compute Payoff amount</button><br>
+    <div id="display2"></div><br>
+    <br>
+    </body>
+</html>

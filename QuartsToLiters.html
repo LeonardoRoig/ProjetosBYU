@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Convert Quarts to Liters</title>
+<script>
+    function Calculate () {
+   //Defining Values of Quarter and Liters.
+    let quartsValue= parseFloat(document.getElementById('quarts').value);
+    let literValue= parseFloat = 0.946353;
+   //Defining the formula of conversion.
+    let totalValue = quartsValue * literValue;
+   //Defining the display.
+    document.getElementById('display').innerHTML = totalValue + " " + "Liters";
+}
+</script>
+</head>
+<body>
+<div>
+<h2>Enter the quarts value.</h2>
+Total Quarts <input type="text" id="quarts" size="6">
+<br>__________________________________________</div>
+<button type="button" onclick="Calculate()">Calculate</button>
+<br>__________________________________________
+<div id="display"></div>
+<br>  
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Mileage</title>
+<script>
+    function Calculate () {
+   //Defining the Odometer Distance and Gas Gallon.
+    let initialOdometer= parseFloat(document.getElementById('initial').value);
+    let actualOdometer= parseFloat(document.getElementById('final').value);
+    let gasGallon= parseFloat(document.getElementById('gas').value);
+   //Defining the formula of miles conversion.
+    let distanceCovered = actualOdometer - initialOdometer;
+    let gasMileage = distanceCovered / gasGallon;
+   //Defining the display.
+    document.getElementById('display').innerHTML ="Your total distance traveled is: " + distanceCovered + " miles." ;
+    document.getElementById('display02').innerHTML ="Your total miles per Gallon is: " + gasMileage;
+}
+</script>
+</head>
+<body>
+<div>
+<h2>Enter the values to calculate the Gas Mileage.</h2>
+Current Odometer Value:  <input type="text" id="final" size="6">
+Initial Odometer Value:  <input type="text" id="initial" size="6">
+Total suplied gas:  <input type="text" id="gas" size="6">
+<br>__________________________________________</div>
+<button type="button" onclick="Calculate()">Calculate</button>
+<br>__________________________________________
+<div id="display"></div>
+<br>
+<div id="display02"></div>
+<br>  
+</body>
+</html>

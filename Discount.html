@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Discount</title>
+<script>
+    // Input the customer’s subtotal!
+function Discount () {
+    let subTotal = parseFloat(document.getElementById("subtotal").value);
+    // Defining the day.
+    var dayOfWeek = new Date().getDay();
+    // Defining tax and discount %.
+    var tax = (0.06 * subTotal);
+    var discount = (0.10 * subTotal);  
+    // Defining what days will have a discount.    
+    if (subTotal > 50 && (dayOfWeek == 2 || dayOfWeek == 3)) {
+    totalFinal1 = (subTotal - discount) + tax;     
+    document.getElementById("display").innerHTML = totalFinal1.toFixed(2);    
+    }
+    else 
+    totalFinal2 = subTotal + tax ;
+    // Display discount.
+    document.getElementById("display").innerHTML = totalFinal2.toFixed(2);
+}
+    
+    
+</script>
+</head>
+<body>
+<div>
+<h2>Discount on Tuesday and Wednesday</h2>
+Customer’s Subtotal  <input type="text" id="subtotal" size="6">
+<br>__________________________________________</div>
+<button type="button" onclick="Discount()">Calculate</button>
+<br>__________________________________________
+<div id="display"></div>
+<br>  
+</body>
+</html> 

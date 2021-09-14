@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Alarm Named</title>
+<script>
+function sleep() {
+    // Defining date.
+    var now = new Date();
+    var month = now.getMonth();
+    var dayOfMonth = now.getDate();
+    var dayOfWeek = now.getDay();
+    //Defining weekends and holidays.
+    if ((dayOfWeek == 0 || dayOfWeek == 6) || (dayOfMonth == 25 && month == 11) || (dayOfMonth == 1 && month == 0) || (dayOfMonth == 4 && month == 6)) {
+        //Defining display.
+        document.getElementById("display1").innerHTML = "Sleep in!";
+}
+    else {
+        //Defining display.
+        document.getElementById("display2").innerHTML = "Get up!" ;
+    }
+
+}
+</script>
+</head>
+<body>
+<button type="button" onclick="sleep()">Alarm Test</button>
+<br>__________________________________________
+<div id="display1"></div>
+<div id="display2"></div>
+</body>
+</html> 

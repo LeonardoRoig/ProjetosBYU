@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Investment Calculator</title>
+<script>
+    /* Defining the function(doFV) to input AmountInv, AnnualRate, NumberOfYears and PeriodPerYear and windspeed from the user.
+    Call the 2º function (computeFutureValue) and calculate with the formula the total Investment
+    Display the result from the 2º function.
+    */ 
+function doFV(){ 
+    var AmountInv = parseFloat(document.getElementById("Amount").value);
+    var AnnualRate = parseFloat(document.getElementById("Rate").value);
+    var NumberOfYears = parseFloat(document.getElementById("Years").value);
+    var PeriodPerYear = parseFloat(document.getElementById("Periods").value);
+
+    var result = computeFutureValue(AmountInv, AnnualRate, NumberOfYears, PeriodPerYear);
+    document.getElementById("display").innerHTML = result;
+}   
+    
+function computeFutureValue(AmountInv, AnnualRate, NumberOfYears, PeriodPerYear){
+    var a = AmountInv;
+    var r = AnnualRate / PeriodPerYear;
+    var n = NumberOfYears * PeriodPerYear;
+    var f = a * Math.pow(1 + r,n) ;
+    return "$" + f.toFixed(2);
+}
+</script>
+</head>
+<body>
+    <h2>Investment Calculator</h2>
+    <br>
+     Amount Invested (Principal): <input type="text" id="Amount" size="6">
+     <br>
+     Annual Rate: <input type="text" id="Rate" size="6">
+     <br>
+     Number of years: <input type="text" id="Years" size="6">
+     <br>
+     Periods per year:<input type="text" id="Periods" size="6">
+     <br>
+    <button type="button" onclick="doFV()">Compute Future Value</button>
+    <br>
+    <div id="display"></div>
+    <br>
+    </body>
+</html>

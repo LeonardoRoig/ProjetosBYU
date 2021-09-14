@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Power</title>
+<script>
+    //Defining the function and the variable of exponential of 2.
+function Calculate(){
+    var result = "  "
+    for(i=0; i<=31; i++) 
+    result += Math.pow(2 , i) + "<br>"
+    //Defining the display.
+    document.getElementById("display").innerHTML = result  
+}
+</script>
+</head>
+<body>
+    <h2>Press the button to see the powers of 2° to 2³¹</h2>
+    <button type="button" onclick="Calculate()">Power 2</button>
+    <br>______________
+    <div id="display"></div>
+    <div id="display1"></div>
+    <br>
+    </body>
+</html>

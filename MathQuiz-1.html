@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>QuizMath</title>
+<script>
+    // Input Numbers!
+    function Calculate () {
+    let firstNumber= parseFloat(document.getElementById("first").value);
+    let lastNumber= parseFloat(document.getElementById("last").value);
+    let arithmeticOperator= (document.getElementById("operator").value);
+    let result= parseFloat(document.getElementById("result").value);
+    // Defining the Operation!
+if (arithmeticOperator == "+") {
+        operation = firstNumber + lastNumber;
+    }else if (arithmeticOperator == "-") {
+        operation = firstNumber - lastNumber;
+    }else if (arithmeticOperator == "*") {
+        operation = firstNumber * lastNumber;
+    }else if (arithmeticOperator == "/") {
+        operation = firstNumber / lastNumber;
+
+}if (result != operation){
+        message = "Incorrect! Try again!";
+    }else message = "Correct! Good job!";
+        
+    //Defining Display!    
+
+    document.getElementById('display').innerHTML = message;
+}
+</script>
+</head>
+<body>
+<div>
+<h2>Enter the 1º Number an Operator (+, -, *, or /) and the 2º Number</h2>
+1º Number  <input type="text" id="first" size="6">
+Operator:  <input type="text" id="operator" size="6">
+2º Number:  <input type="text" id="last" size="6">
+= <input type="text" id="result" size="6">
+<br>__________________________________________</div>
+<button type="button" onclick="Calculate()">Calculate</button>
+<br>__________________________________________
+<div id="display"></div>
+<br>  
+</body>
+</html> 

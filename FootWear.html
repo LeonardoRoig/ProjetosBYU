@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>FootWear</title>
+<script>
+    //Defining the weather!
+    function Wear () {
+        let text = document.getElementById("climate").value;
+        let weather = (text);
+
+    // Choose a message.
+    let message;
+    if (weather == "humid", "wild") {
+    message = "If the weather is " + weather + " wear Shoes!";
+}   if (weather == "hot") {
+    message = "If the weather is " + weather + " wear Sandals!";
+}   if (weather == "rain") {
+    message = "If the weather is " + weather + " wear Galoshes!";
+}   if (weather == "snow") {
+    message = "If the weather is " + weather + " wear Boots!";
+} else {
+    mensage = "Maybe you should try shoes!";
+}
+    // Display the message!
+    document.getElementById('display').innerHTML = message;
+}
+</script>
+</head>
+<body>
+<div>
+<h2>How's the weather today? Try this options: 
+    humid, wind, hot, rain, snow.</h2>
+How's the weather? <input type="text" id="climate" size="6">
+<br>__________________________________________</div>
+<button type="button" onclick="Wear()">Try it!</button>
+<br>__________________________________________
+<div id="display"></div>
+<br>  
+</body>
+</html>

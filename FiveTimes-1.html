@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>FiveTimes</title>
+<script>
+    // Defining the function end the input of the number to be multiplied.
+function Calculate(){ 
+    var number = parseInt(document.getElementById("inputNumber").value);
+    var result = ' '
+    //Defining the nukber to be multiplied by the inputNumber.
+    for(i=1; i<=12; i++)
+    result += number + " X " + i + " = " + number*i + "<br>"
+    //Defining the display.
+    document.getElementById("display").innerHTML = result
+}   
+</script>
+</head>
+<body>
+    <h2>Times Table</h2>
+    Enter the number to see the Table.<br>
+    Preferably use number 5. But you can use any number!
+    <input type="text" id="inputNumber" size="6">
+    <button type="button" onclick="Calculate()">Times Table</button>
+    <br>______________
+    <div id="display"></div>
+    <br>
+    </body>
+</html>
